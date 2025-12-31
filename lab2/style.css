@@ -1,0 +1,50 @@
+
+
+/* testing out hover pseudo class*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    background-color: antiquewhite;
+
+}
+.header {
+    text-align: center;
+    margin-bottom: 0;
+    background-color: aqua;
+}
+.nav-bar {
+    background-color: aquamarine;
+}
+.nav-bar ul
+{
+    
+    text-align: center;
+}
+.nav-bar ul li  
+{
+    display:  inline;
+}
+
+table.layout
+{
+    width: 100%;
+
+}
+
+table.layout td
+{
+    border: 1px solid black;
+}
+
+footer
+{
+    min-height: 50px;
+    text-align: center;
+}
+footer span
+{
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="thankyou.html" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="repeatPassword">Repeat Password:</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" required><br><br>
+
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" id="birthDate" name="birthDate"><br><br>
+
+        <label for="userPicture">User Picture:</label>
+        <input type="file" id="userPicture" name="userPicture"><br><br>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+        </fieldset><br>
+
+        <label for="faculty">Faculty:</label>
+        <select id="faculty" name="faculty">
+            <option value="engineering">Engineering</option>
+            <option value="medicine">Medicine</option>
+            <option value="business">Business</option>
+            <option value="arts">Arts</option>
+        </select><br><br>
+
+        <fieldset>
+            <legend>Interests:</legend>
+            <input type="checkbox" id="programming" name="interests" value="programming">
+            <label for="programming">Programming</label><br>
+            <input type="checkbox" id="reading" name="interests" value="reading">
+            <label for="reading">Reading</label><br>
+            <input type="checkbox" id="swimming" name="interests" value="swimming">
+            <label for="swimming">Swimming</label>
+        </fieldset><br>
+
+        <label for="aboutYou">About You:</label><br>
+        <textarea id="aboutYou" name="aboutYou" rows="4" cols="50"></textarea><br><br>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to terms and conditions</label><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
