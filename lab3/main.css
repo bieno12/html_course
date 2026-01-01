@@ -1,0 +1,40 @@
+
+/* question 1*/
+p {
+    color: red;
+}
+
+/* question 2 */
+
+p, div {
+    color: black;
+}
+
+/* question 3 */
+div#myDiv > p.mainClass {
+    color: green;
+}
+/* question 4 */
+div p {
+    color: blue;
+}
+
+/* question 5 */
+input[type="text"]
+{
+    background-color:blueviolet;
+}
+
+div ~ span 
+{
+    color:yellowgreen;
+}
+
+p.myClass::after
+{
+    content: "(p myClass selected)";
+}
+div#myDiv::after
+{
+    content: "selected by (div#miDiv)";
+}

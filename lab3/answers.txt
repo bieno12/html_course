@@ -1,0 +1,11 @@
+question 1
+em is size relative to parent, while rem is size relative to Root.
+
+question 5.g.i
+I notice no difference
+
+question 6
+the span#content p#aboutus is of higher specificity, so it will be the one applied.
+
+question 7
+what happened, is the style of p#aboutus changed to red, because the importatn directives tells the browser that this statement should be applied even if a selector with higher specificity should be able to override it
