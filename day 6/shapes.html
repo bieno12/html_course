@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+
+    <script src="./type-safety.js"></script>
+</head>
+<body>
+    <script>
+
+        class Shape {
+
+            static shapeCount = 0;
+            
+            constructor()
+            {
+                Shape.shapeCount++;
+            }
+            
+            static getShapeCount()
+            {
+                return Shape.shapeCount;
+            }
+            area()
+            {
+                return 0;
+            }
+
+            perimeter()
+            {
+                return 0;
+            }
+            toString()
+            {
+                return `area: ${this.area()}, perimeter: ${this.perimeter()}`;
+            }
+        }
+
+        class Square extends Shape {
+            sideLength;
+
+            static squareCount = 0;
+            constructor(sideLength)
+            {
+                assertNoArguments(arguments, 1);
+                assertNumber(sideLength);
+                if(Square.squareCount == 1)
+                    throw new Error("Cannot have more than one Square");
+                Square.squareCount++;
+
+                super();
+                this.sideLength = sideLength
+
+
+            }
+            area()
+            {
+                return this.sideLength * this.sideLength;
+            }
+            perimeter()
+            {
+                return 4 * this.sideLength;
+            }
+        }
+
+        class Rectangle extends Shape {
+            width;
+            height;
+
+            static rectCount = 0;
+            constructor(width, height)
+            {
+
+                assertNoArguments(arguments, 2);
+                assertNumber(width); assertNumber(height);
+                if(Rectangle.rectCount == 1)
+                    throw new Error("Cannot have more than one Rectangle");
+                Rectangle.rectCount++;
+                super();
+                this.width = width;
+                this.height = height;
+            }
+            area()
+            {
+                return this.width * this.height;
+            }
+            perimeter()
+            {
+                return 2 * this.width + 2 * this.height;
+            }
+
+
+        }
+        class Circle extends Shape {
+            radius;
+            constructor(radius)
+            {
+                super();
+                assertNoArguments(arguments, 1);
+                assertNumber(radius);
+                this.radius = radius;
+            }
+            area()
+            {
+                return Math.PI * this.radius * this.radius;
+            }
+            perimeter()
+            {
+                
+                return 2 * Math.PI * this.radius;
+            }
+
+        }
+
+        let square = new Square(10);
+        let rect = new Rectangle(10, 20);
+
+        let circle = new Circle(10.0);
+
+        console.log(`Square: ${square}`);
+        console.log(`rectangle: ${rect}`);
+        console.log(`circle: ${circle}`);
+        console.log("Shape counts:", Shape.getShapeCount());
+    </script>
+</body>
+</html>

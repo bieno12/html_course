@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+    <script src="./type-safety.js"></script>
+</head>
+<body>
+    
+    <script>
+        class Book {
+            title;
+            author;
+            noChapters;
+            noPages;
+            publisher;
+            noCopies;
+            constructor(title, author, noChapters, noPages, publisher, noCopies)
+            {
+                assertNoArguments(arguments, 2);
+                assertType(title, "string");
+                assertType(author, "string");
+                
+                assertNumberOrDefault(noChapters, 0);
+                assertNumberOrDefault(noPages, 0);
+                assertNumberOrDefault(noCopies, 0);
+                assertTypeOrDefault(publisher, "string", "unknown");
+                this.title = title;
+                this.author = author;
+            }
+            
+            toString()
+            {
+                return `Book("${this.title}", "${this.author}")`;
+            }
+
+        }
+
+        class Box {
+            content; // array of books
+            width;
+            length;
+            height;
+            material;
+            constructor(width, length, height, material)
+            {
+                assertNoArguments(arguments, 3);
+                assertNumber(width);
+                assertNumber(length);
+                assertNumber(height);
+                assertType(material, "string");
+
+                this.width = width;
+                this.length = length;
+                this.height = height;
+                this.material = material;
+                this.content = [];
+
+            }
+            addBook(book)
+            {
+                assertClass(book, Book);
+
+                this.content.push(book);
+            }
+            get noBooks(){
+                return this.content.length;
+            }
+            get volume(){
+                return this.width * this.length * this.height;
+            }
+            deleteBook(title)
+            {
+                assertType(title, "string");
+                this.content = this.content.filter((book) => book.title !== title);
+            }
+
+            toString()
+            {
+                return `Box(dim=(${this.width}, ${this.length}, ${this.height}}), #books=${this.content.length})`;
+            }
+            valueOf()
+            {
+                return this.noBooks;
+            }
+        }
+    </script>
+</body>
+</html>
